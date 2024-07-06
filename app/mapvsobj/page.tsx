@@ -1,11 +1,13 @@
 "use client"
 import React, { useState } from "react"
 
+
+type ResObjValue = string | [number, number] // tuple
 interface ResObj {
-    target1: any
-    target2: any
-    target3: any
-    target4: any
+    target1: ResObjValue
+    target2: ResObjValue
+    target3: ResObjValue
+    target4: ResObjValue
 }
 /*
 Here we will figure out the differences in preformance between the js map data structure and a object 
@@ -47,25 +49,31 @@ export default function MapVsObj() {
         }
 
 
-        // Stores all the values in the resObject in a array
-        const objValues = Object.values(resObj)
 
-        // stores all the keys of resObject in a array 
-        const objKeys = Object.keys(resObj) as Array<keyof ResObj>
 
+        // DOESNT WORK YET
         while (Object.values(resObj).includes("")) {
-            console.log(resObj)
-            for (let i = 0; i < nums.length; i++) {
-                if (targets.includes(i + (i + 1))) {
-                    const targetNotFound = Object.keys(resObj).findIndex((key: keyof ResObj) => resObj[key] === "")
-                    if (targetNotFound === -1) return console.log("target not found", targetNotFound)
 
-                    resObj[objKeys[targetNotFound]] = [i , (i + 1)]
+            for (let i = 0; i < nums.length; i++) {
+                if (Object.values(resObj).includes("")) {
+                    if (targets.includes(i + (i + 1))) {
+                        const targetNotFound = Object.values(resObj).findIndex(key => key === "")
+                        if (targetNotFound === -1) {
+                            console.log("NOT FOUND: ", resObj)
+                        } else { 
+                            console.log("FOUND: ",resObj )
+                        }
+    
+                        // stores all the keys of resObject in a array 
+                        const objKeys = Object.keys(resObj) as Array<keyof ResObj>
+    
+                        resObj[objKeys[targetNotFound]] = [i, (i + 1)]
+                    } 
                 }
             }
         }
 
-        console.log(resObj)
+
 
         const endTime = Date.now()
 
