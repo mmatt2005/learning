@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color:  rgb(21, 21, 21);
+  color: whitesmoke;
+}
+
+button { 
+  background-color: gray;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgba(128, 128, 128, 0.482);
+}
