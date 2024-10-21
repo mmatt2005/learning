@@ -8,11 +8,15 @@
 }
 
 button { 
-  background-color: gray;
+  background-color: rgba(128, 128, 128);
   padding: 5px;
   cursor: pointer;
   border-radius: 5px;
 }
 button:hover {
   background-color: rgba(128, 128, 128, 0.482);
+}
+
+input { 
+  background-color: gray;
 }
