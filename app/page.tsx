@@ -6,6 +6,11 @@ const learnings = [
     date: "7/6/24 8:55am",
     route: "mapvsobj",
     description: "Figure out the differences between map data structure and a object"
+  },
+  {
+    date: "10/21/24 9:10a,",
+    route: "backgroundThemes",
+    description: "Testing"
   }
 ]
 import { useRouter } from "next/navigation";
